@@ -3,7 +3,7 @@ import style from "./Home.module.css";
 import { useSelector } from "react-redux";
 
 export default function HomePage() {
-  const email = useSelector((state) => state.user.email);
+  const username = useSelector((state) => state.user.username);
 
   return (
     <>
@@ -16,13 +16,13 @@ export default function HomePage() {
             <br />
             like-minded students
           </h2>
-          <Link to={email ? "/find" : "/auth"} className={style.cta_button}>
+          <Link to={username ? "/find" : "/auth"} className={style.cta_button}>
             GET STARTED!
           </Link>
           <div className={style.instructions}>
             <p>Instructions:</p>
             <p>
-              <Link to={email ? `/user/${email}` : "/auth"}>
+              <Link to={username ? `/user/${username}` : "/auth"}>
                 Press this button
               </Link>
             </p>

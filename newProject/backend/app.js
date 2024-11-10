@@ -20,7 +20,6 @@ async function connectDatabase() {
 }
 connectDatabase();
 
-function isNuEmail(email) {}
 
 async function hashPassword(password) {
   const salt = 10;

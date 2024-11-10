@@ -21,7 +21,31 @@ export default function InterestPage() {
     "Engineer",
     "Soci.",
     "Languages",
+    "Medicine",
+    "Psychology",
+    "Law",
+    "Education",
+    "Philosophy",
+    "Geology",
+    "Astronomy",
+    "Environmental Science",
+    "History",
+    "Music",
+    "Architecture",
+    "Graphic Design",
+    "Business",
+    "Marketing",
+    "Journalism",
+    "Agriculture",
+    "Biotechnology",
+    "Hospitality",
+    "Economics",
+    "Veterinary Science",
+    "Nursing",
+    "Pharmacology",
+    "Anthropology",
   ];
+
   const SPORTS = [
     "None",
     "Basketball",
@@ -35,11 +59,38 @@ export default function InterestPage() {
     "Boxing",
     "Volleyball",
     "Kickboxing",
+    "Tennis",
+    "Badminton",
+    "Gymnastics",
+    "Martial Arts",
+    "Hiking",
+    "Surfing",
+    "Rowing",
+    "Skiing",
+    "Snowboarding",
+    "Cricket",
+    "Baseball",
+    "Golf",
+    "Handball",
+    "Archery",
+    "Rugby",
+    "Horse Riding",
+    "Fencing",
+    "Skateboarding",
+    "Fishing",
+    "Ice Hockey",
+    "Rock Climbing",
+    "Bowling",
+    "Snooker",
+    "Squash",
+    "Ultimate Frisbee",
+    "Dodgeball",
   ];
 
   const [choosenCareers, setChoosenCareers] = useState([]);
   const [choosenSports, setChoosenSports] = useState([]);
   const [choosenYear, setChoosenYear] = useState(null);
+  const [successText, setSuccessText] = useState(null);
   const [telegramTag, setTelegramTag] = useState("");
   const [errorText, setErrorText] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -49,14 +100,15 @@ export default function InterestPage() {
 
   const dispatch = useDispatch();
   const email = useSelector((state) => state.user.email);
+  const username = useSelector((state) => state.user.username);
   const { user } = useParams();
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (email !== user) {
+    if (username !== user) {
       navigate("/", { replace: true });
     }
-  }, [email, user, navigate]);
+  }, [username, user, navigate]);
 
   const toggleCareersDropdown = () => setIsCareersOpen(!isCareersOpen);
   const toggleSportsDropdown = () => setIsSportsOpen(!isSportsOpen);
@@ -188,31 +240,41 @@ export default function InterestPage() {
     }
 
     setErrorText("");
+    setSuccessText("You successfully changed your information");
     setIsSubmitting(false);
   }
 
   return (
     <div className={style.InterestPage}>
+      <header className={style.emailHeader}>
+        <p className={style.emailText}>{email}</p>
+      </header>
       <div className={style.container}>
         <div className={style.section}>
           <h2>Mutual Likes</h2>
           {mutualLikes.length > 0 ? (
-            <ul className={style.mutualLikes}>
+            <div className={style.mutualLikesContainer}>
               {mutualLikes.map((user, index) => (
-                <li key={index}>
-                  <h4>{user.username}</h4>
-                  <p>Year of Study: {user.yearOfStudy}</p>
-                  <p>Career Interests: {user.career.join(", ")}</p>
-                  <p>Hobbies: {user.interests.join(", ")}</p>
-                  <p>
-                    Telegram:{" "}
+                <div key={index} className={style.mutualLikeCard}>
+                  <h4 className={style.username}>{user.username}</h4>
+                  <p className={style.detail}>
+                    <strong>Year of Study:</strong> {user.yearOfStudy}
+                  </p>
+                  <p className={style.detail}>
+                    <strong>Career Interests:</strong> {user.career.join(", ")}
+                  </p>
+                  <p className={style.detail}>
+                    <strong>Hobbies:</strong> {user.interests.join(", ")}
+                  </p>
+                  <p className={style.detail}>
+                    <strong>Telegram:</strong>{" "}
                     {user.telegram.startsWith("@")
                       ? user.telegram
                       : `@${user.telegram}`}
                   </p>
-                </li>
+                </div>
               ))}
-            </ul>
+            </div>
           ) : (
             <p>No mutual likes found.</p>
           )}
@@ -310,6 +372,7 @@ export default function InterestPage() {
           >
             {isSubmitting ? "Submitting..." : "Submit"}
           </button>
+          {successText && <p className={style.successText}>{successText}</p>}
           <button className={style.leaveButton} onClick={handleLeaveAccount}>
             Leave Account
           </button>

@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import style from "./Header.module.css";
 import { useSelector } from "react-redux";
 export default function Header() {
-  const isLogged = useSelector((state) => state.user.email);
+  const isLogged = useSelector((state) => state.user.username);
   return (
     <header>
       <Link to={"/"} className={style.logo}>
