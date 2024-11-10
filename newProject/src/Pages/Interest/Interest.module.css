@@ -1,0 +1,142 @@
+.InterestPage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f4f8;
+  min-height: 100vh;
+}
+
+.container {
+  width: 100%;
+  max-width: 1440px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.section {
+  background-color: #ffffff;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.section h2 {
+  margin-bottom: 10px;
+  color: #333333;
+}
+
+.card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+}
+
+.button {
+  background-color: #3d70ef;
+  padding: 10px 20px;
+  color: #333333;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+span {
+  color: #333333;
+
+}
+
+.button:hover {
+  background-color: #3158c4;
+}
+
+.dropdown-arrow {
+  font-size: 24px;
+  vertical-align: middle;
+  color: #333333;
+}
+
+.dropdown_arrow {
+  cursor: pointer;
+  display: inline-block;
+}
+
+.dropdown_content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  background-color: #f7f9fc;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 100%;
+  transition: 1s;
+}
+
+.selected {
+  background-color: #3158c4;
+  color: #ffffff;
+  box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.2);
+  transform: translateY(2px);
+  border: 1px solid #2a4a9a;
+}
+
+.errorText {
+  color: #d9534f;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.submitSection {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 20px;
+  gap: 100px;
+}
+
+.submitButton {
+  background-color: #3d70ef;
+  color: #ffffff;
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  width: 150px;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.submitButton:hover {
+  background-color: #3158c4;
+}
+
+.leaveButton {
+  background-color: #d9534f;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 10px;
+  width: 150px;
+  transition: background-color 0.3s ease;
+}
+
+.leaveButton:hover {
+  background-color: #c9302c;
+}
+.mutualLikes{
+  color: black;
+}

@@ -1,0 +1,64 @@
+.AuthPage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.register_container {
+  background-color: #FFFFFF;
+  padding: 40px;
+  border-radius: 15px;
+  width: 400px;
+  text-align: center;
+  color: #333333;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.register_container h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #3D70EF;
+}
+.register_container p{
+  padding-bottom: 30px;
+}
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-size: 1rem;
+  margin: 10px 0 5px;
+  color: #555555;
+}
+
+input {
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid #CCCCCC;
+  margin-bottom: 15px;
+}
+
+button {
+  background-color: #3D70EF;
+  color: #FFFFFF;
+  border: none;
+  padding: 15px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #2C56BF;
+}
+
+.errorText{
+  padding-top: 25px;
+  color: red;
+}
